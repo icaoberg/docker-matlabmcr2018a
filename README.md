@@ -1,17 +1,17 @@
-# docker-matlabmcr2018b
+# docker-matlabmcr2018a
 
-[![Build Status](https://travis-ci.org/murphygroup/docker-matlabmcr2018b.svg?branch=master)](https://travis-ci.org/murphygroup/docker-matlabmcr2018b)
-[![GitHub issues](https://img.shields.io/github/issues/murphygroup/docker-matlabmcr2018b.svg)](https://github.com/murphygroup/docker-matlabmcr2018b/issues)
-[![GitHub forks](https://img.shields.io/github/forks/murphygroup/docker-matlabmcr2018b.svg)](https://github.com/murphygroup/docker-matlabmcr2018b/network)
-[![GitHub stars](https://img.shields.io/github/stars/murphygroup/docker-matlabmcr2018b.svg)](https://github.com/murphygroup/docker-matlabmcr2018b/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://raw.githubusercontent.com/murphygroup/docker-matlabmcr2018b/master/LICENSE)
+[![Build Status](https://travis-ci.org/icaoberg/docker-matlabmcr2018a.svg?branch=master)](https://travis-ci.org/icaoberg/docker-matlabmcr2018a)
+[![GitHub issues](https://img.shields.io/github/issues/icaoberg/docker-matlabmcr2018a.svg)](https://github.com/icaoberg/docker-matlabmcr2018a/issues)
+[![GitHub forks](https://img.shields.io/github/forks/icaoberg/docker-matlabmcr2018a.svg)](https://github.com/icaoberg/docker-matlabmcr2018a/network)
+[![GitHub stars](https://img.shields.io/github/stars/icaoberg/docker-matlabmcr2018a.svg)](https://github.com/icaoberg/docker-matlabmcr2018a/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://raw.githubusercontent.com/icaoberg/docker-matlabmcr2018a/master/LICENSE)
 
 The [MATLAB Runtime](https://www.mathworks.com/products/compiler/matlab-runtime.html) is a standalone set of shared libraries that enables the execution of compiled MATLAB applications or components on computers that do not have MATLAB installed. When used together, MATLAB, MATLAB Compiler, and the MATLAB Runtime enable you to create and distribute numerical applications or software components quickly and securely.
 
 To build an image using the `Dockerfile` in this repository, run the command
 
 ```
-➜ docker build -t "murphylab/matlabmcr2018b" .
+➜ docker build -t "murphylab/matlabmcr2018a" .
 ```
 
 This should build an image
@@ -20,7 +20,7 @@ This should build an image
 ➜  docker container ls -a
 
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                        PORTS               NAMES
-48dde52f2bc8        murphylab/matlabmcr2018b     "/bin/bash -c 'pyt..."   45 seconds ago      Exited (0) 39 seconds ago                         frosty_wescoff
+48dde52f2bc8        murphylab/matlabmcr2018a     "/bin/bash -c 'pyt..."   45 seconds ago      Exited (0) 39 seconds ago                         frosty_wescoff
 ```
 
 ## Contributing

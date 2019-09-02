@@ -1,11 +1,11 @@
-FROM ubuntu:16.04 as intermediate
+FROM ubuntu:18.04 as intermediate
 
 ###############################################################################################
 MAINTAINER Ivan E. Cao-Berg <icaoberg@andrew.cmu.edu>
-LABEL Description="Ubuntu 16.04 + MATLAB MCR 2018b"
+LABEL Description="Ubuntu 18.04 + MATLAB MCR 2018a"
 LABEL Vendor="Murphy Lab in the Computational Biology Department at Carnegie Mellon University"
 LABEL Web="http://murphylab.cbd.cmu.edu"
-LABEL Version="2018b"
+LABEL Version="2018a"
 ###############################################################################################
 
 ###############################################################################################
@@ -27,13 +27,13 @@ RUN apt-get update && apt-get install -y \
 RUN add-apt-repository ppa:webupd8team/java && \
     apt-get update && apt-get upgrade -y && \
     apt-get install -y openjdk-8-jdk && \
-    apt-get clean 
+    apt-get clean
 ###############################################################################################
 
 ###############################################################################################
-# INSTALL MATLAB MCR 2018b
+# INSTALL MATLAB MCR 2018a
 USER root
-RUN echo "Downloading Matlab MCR 2018b"
+RUN echo "Downloading Matlab MCR 2018a"
 COPY mcr-install /mcr-install
 RUN mkdir /opt/mc && \
     cd /mcr-install && \
@@ -44,15 +44,15 @@ RUN mkdir /opt/mc && \
 ###############################################################################################
 
 ###############################################################################################
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 COPY --from=intermediate /opt/mcr /opt/mcr
 ###############################################################################################
 
 ###############################################################################################
 # CONFIGURE ENVIRONMENT VARIABLES FOR MCR
-RUN mv -v /opt/mcr/v95/sys/os/glnxa64/libstdc++.so.6 /opt/mcr/v95/sys/os/glnxa64/libstdc++.so.6.old
-ENV LD_LIBRARY_PATH /opt/mcr/v95/runtime/glnxa64:/opt/mcr/v95/bin/glnxa64:/opt/mcr/v95/sys/os/glnxa64
-ENV XAPPLRESDIR /opt/mcr/v95/X11/app-defaults
+RUN mv -v /opt/mcr/v94/sys/os/glnxa64/libstdc++.so.6 /opt/mcr/v94/sys/os/glnxa64/libstdc++.so.6.old
+ENV LD_LIBRARY_PATH /opt/mcr/v94/runtime/glnxa64:/opt/mcr/v94/bin/glnxa64:/opt/mcr/v94/sys/os/glnxa64
+ENV XAPPLRESDIR /opt/mcr/v94/X11/app-defaults
 ###############################################################################################
 
 ###############################################################################################
